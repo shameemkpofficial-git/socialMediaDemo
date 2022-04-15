@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from "react";
 import { useNavigation } from "@react-navigation/core";
-import { StyleSheet, View, Text, FlatList, Image, TouchableOpacity, TextInput, Modal, Alert, Button } from "react-native";
+import { StyleSheet, View, Text, FlatList, Image, TouchableOpacity, TextInput, Modal, Alert, Button, ImageBackground } from "react-native";
 import axios from "axios";
 
 function Feed(){
@@ -59,7 +59,7 @@ function Feed(){
         title='create a new post'
         onPress={() => setModalVisible(true)}></Button>
             <Modal animationType='slide'
-            transparent={true}
+            transparent={false}
             visible={modalVisible}
             onRequestClose={() => {
                 Alert.alert('Modal has been closed');
@@ -94,6 +94,8 @@ function Feed(){
             renderItem={({item}) => {
                 return(
                     <View style={styles.flatlistContainer}>
+                        <Image source={{uri: item.photo}} 
+                        style={{height:40, width:40, borderRadius:110, position:'absolute', marginLeft:10}}></Image>
                         <Text style={styles.avatarText}>{item.name}</Text>
                         <TouchableOpacity onPress={()=> navigation.push('Details',{id: item.id})}>
                         <Image source={{uri: item.photo}} style={styles.avatarImage}></Image>
@@ -121,19 +123,19 @@ const styles = StyleSheet.create({
     flatlistContainer:{
         backgroundColor:'black',
         width: "100%",
-        height: 350,
+        height: 300,
         marginTop: 10,
     },
     avatarText:{
-        fontSize:20, 
+        fontSize:30, 
         textAlign:'center', 
         fontWeight:'600', 
-        color:'#fff'
+        color:'#fff',
+        fontStyle:'italic'
     },
     avatarImage:{
-        height:"90%", 
-        width:'90%', 
-        marginLeft:20
+        height:250, 
+        width:'100%', 
     }
 })
 export default Feed;
