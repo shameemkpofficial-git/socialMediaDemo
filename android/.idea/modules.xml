@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/jomTask1.iml" filepath="$PROJECT_DIR$/.idea/modules/jomTask1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/jomTask1.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/jomTask1.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1556228740/jomTask1.react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/.idea/modules/1556228740/jomTask1.react-native-gesture-handler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1538568685/jomTask1.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/1538568685/jomTask1.react-native-safe-area-context.iml" />
+    </modules>
+  </component>
+</project>
