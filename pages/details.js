@@ -3,6 +3,7 @@ import { View , StyleSheet, ImageBackground, TextInput, Button, Text} from "reac
 import { useRoute } from "@react-navigation/core";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { TouchableHighlight } from "react-native-gesture-handler";
 
 
 function Details(){
@@ -20,7 +21,7 @@ function Details(){
         if(comment == ''){
             alert("Enter comment")
         } try {
-            const response = await axios.put(`https://62205248ce99a7de1955f418.mockapi.io/fb/${id}`,{comments:[...data?.comments,comment]},);
+            const response = await axios.put(`https://62205248ce99a7de1955f418.mockapi.io/fb/${id}`,{comment:[...data?.comment,comment]},);
             if(response.status == 201){
                 alert(` posted your comment`);
                 setComment('');
@@ -55,15 +56,17 @@ const getAxiosData = async () => {
                 left:17
                 }}>
                 </ImageBackground>}
-                <Text>{data.comment.map}</Text>
-                <TextInput placeholder='comment here'
+                
+                <TextInput placeholder='comment here whats your opinion?'
                 placeholderTextColor='black'
                 value={comment}
                 onChangeText={text=>setComment(text)}
-                style={{color:'black', bottom:100, borderColor:'black', borderWidth:2, borderRadius:8, width:330, paddingLeft:130}}></TextInput>
-                <Button
-        title='Submit'
-        onPress={onSubmitFormHandler}></Button>
+                style={{color:'black', borderColor:'black', borderWidth:2, borderRadius:8, width:330, paddingLeft:10, height:40, paddingBottom:10, position:'absolute', top:390}}></TextInput>
+              
+        <TouchableHighlight onPress={onSubmitFormHandler}
+        style={{backgroundColor:'green', width:90, height:20, marginRight:190}}>
+            <Text style={{textAlign:'center', color:'#fff'}}>Sent</Text>
+        </TouchableHighlight>
 
             </View>
     )
